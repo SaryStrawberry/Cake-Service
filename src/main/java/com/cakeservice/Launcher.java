@@ -1,5 +1,5 @@
 
-package com.example.cakeservice;
+package com.cakeservice;
 
 import javafx.application.Application;
 
