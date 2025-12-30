@@ -1,7 +1,6 @@
 package com.cakeservice;
 
 import java.time.LocalDate;
-
 public class Order {
     public Cake cake;
     public LocalDate orderCreationDate;
@@ -10,12 +9,22 @@ public class Order {
     public String message;
     public double finalCost;
 
+    //Main constructor method
     public Order(Cake cake, LocalDate orderDeliveryDate, String deliveryLocation, String message, double finalCost) {
         cake = this.cake;
         orderCreationDate = LocalDate.now();
         orderDeliveryDate = this.orderDeliveryDate;
         deliveryLocation = this.deliveryLocation;
         message = this.message;
+        finalCost = this.finalCost;
+    }
+
+    //Constructor method that does not require a message
+    public Order(Cake cake, LocalDate orderDeliveryDate, String deliveryLocation, double finalCost) {
+        cake = this.cake;
+        orderCreationDate = LocalDate.now();
+        orderDeliveryDate = this.orderDeliveryDate;
+        deliveryLocation = this.deliveryLocation;
         finalCost = this.finalCost;
     }
 
