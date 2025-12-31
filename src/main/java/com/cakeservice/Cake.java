@@ -9,12 +9,12 @@ public class Cake {
     public double cost;
 
     public Cake(String name, String batter, String frosting, String topping, int preparationTime, double cost) {
-        name = this.name;
-        batter = this.batter;
-        frosting = this.frosting;
-        topping = this.topping;
-        preparationTime = this.preparationTime;
-        cost = this.cost;
+        this.name = name;
+        this.batter = batter;
+        this.frosting = frosting;
+        this.topping = topping;
+        this.preparationTime = preparationTime;
+        this.cost = cost;
     }
 
     public String getRecipeName() {
