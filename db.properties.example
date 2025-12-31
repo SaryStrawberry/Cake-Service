@@ -1,0 +1,3 @@
+db.url=jdbc:mysql://localhost:3306/cake_service
+db.user=username
+db.password=password
