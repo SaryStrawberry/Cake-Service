@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class FileUtil {
     public static final String recipes = "recipes.txt";
     public static String orders = "orders.txt";
@@ -22,6 +24,18 @@ public class FileUtil {
                     Double.parseDouble(parts[i+5]));
         }
         return cake;
+    }
+
+    //This method does the same as the "getCakeFromLine()" method, except it creates an Order object.
+    public static Order getOrderFromLine(String line) throws IOException {
+        Order order = null;
+        String[] parts = line.split(",");
+
+        for (int i = 0; i < parts.length; i += 6) {
+            order = new Order(getCakeByName(parts[i]), LocalDate.parse(parts[i+1]),
+                    LocalDate.parse(parts[i+2]), parts[i+3], parts[i+4], Double.parseDouble(parts[i+5]));
+        }
+        return order;
     }
 
     //This method takes a recipe name, checks the recipes file to find a match and returns a Cake object
@@ -57,7 +71,7 @@ public class FileUtil {
                 cake.getPreparationTime(), cake.getCost());
     }
 
-    //This method reads from the recipes file, parses them and stores the recipes in an ArrayList of Cake objects
+    //This method reads each line of the recipes file, parses and stores each into an ArrayList of Cake objects.
     public static List<Cake> retrieveAllRecipes() throws IOException {
         BufferedReader recipeReader = new BufferedReader(new FileReader(recipes));
         String line;
@@ -73,8 +87,7 @@ public class FileUtil {
         return recipes;
     }
 
-    //This method reads each line of the orders file, creates an Order object from each line and adds each to an
-    //ArrayList of Order objects.
+    //This method does the same as the "retrieveAllRecipes()" method, except for the orders file.
     public static List<Order> retrieveAllOrders() throws IOException{
         BufferedReader orderReader = new BufferedReader(new FileReader(orders));
         String line;
@@ -82,14 +95,10 @@ public class FileUtil {
         List<Order> orders = new ArrayList<>();
 
         while ((line = orderReader.readLine()) != null) {
-            String[] parts = line.split(",");
-
-            for (int i = 0; i < parts.length; i +=6) {
-                Order order = new Order(formatRecipeByName(parts[i]), LocalDate.parse(parts[i+1]), LocalDate.parse(parts[i+2]), parts[i+3], parts[i+4], Double.parseDouble(parts[i+5]));
-                orders.add(order);
-            }
+            order = getOrderFromLine(line);
+            orders.add(order);
         }
-        return recipes;
+        return orders;
     }
 
 

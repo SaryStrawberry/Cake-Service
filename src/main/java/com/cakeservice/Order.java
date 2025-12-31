@@ -10,7 +10,7 @@ public class Order {
     public double finalCost;
 
     //Main constructor method
-    public Order(Cake cake, LocalDate orderDeliveryDate, String deliveryLocation, String message, double finalCost) {
+    public Order(Cake cake, LocalDate orderCreationDate, LocalDate orderDeliveryDate, String deliveryLocation, String message, double finalCost) {
         this.cake = cake;
         orderCreationDate = LocalDate.now();
         this.orderDeliveryDate = orderDeliveryDate;
