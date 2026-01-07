@@ -1,4 +1,4 @@
-package com.cakeservice;
+package com.cakeservice.model;
 
 public class Cake {
     public String name;

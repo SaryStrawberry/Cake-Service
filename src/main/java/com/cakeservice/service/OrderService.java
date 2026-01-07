@@ -1,4 +1,6 @@
-package com.cakeservice;
+package com.cakeservice.service;
+
+import com.cakeservice.model.Cake;
 
 public class OrderService {
     public static String parseUserCommand(String userInput) {

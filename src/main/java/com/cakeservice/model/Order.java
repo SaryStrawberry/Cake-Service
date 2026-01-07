@@ -1,4 +1,4 @@
-package com.cakeservice;
+package com.cakeservice.model;
 
 import java.time.LocalDate;
 public class Order {

@@ -1,4 +1,4 @@
-package com.cakeservice;
+package com.cakeservice.db;
 
 import java.io.InputStream;
 import java.sql.DriverManager;
