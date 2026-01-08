@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cakeservice.app.controllers.SearchController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <ComboBox fx:id="searchOptions">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Find a cake"/>
+                <String fx:value="Find an order"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Label fx:id="findCakeLabel">Find cakes by ---:</Label>
+    <ComboBox fx:id="cakeSearchOptions">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Name"/>
+                <String fx:value="Batter"/>
+                <String fx:value="Frosting"/>
+                <String fx:value="Topping"/>
+                <String fx:value="Preparation time"/>
+                <String fx:value="Cost"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <TextField fx:id="findCakeField" promptText="Enter a ---"/>
+
+    <Button fx:id="cakeSearchBtn" text="Enter"/>
+
+
+
+
+    <Label fx:id="findOrderLabel">Find orders by ---:</Label>
+    <ComboBox fx:id="orderSearchOptions">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Order ID"/>
+                <String fx:value="Name"/>
+                <String fx:value="Order Creation Date"/>
+                <String fx:value="Delivery Date"/>
+                <String fx:value="Delivery Location"/>
+                <String fx:value="Cost"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <TextField fx:id="findOrderField" promptText="Enter a ---"/>
+
+    <Button fx:id="orderSearchBtn" text="Enter"/>
+
+    <Button fx:id="returnBtn" text="Back"/>
+
+</AnchorPane>

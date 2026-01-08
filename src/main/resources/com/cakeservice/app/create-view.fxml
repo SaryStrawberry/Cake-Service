@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cakeservice.app.controllers.CreateController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <ComboBox fx:id="createOptions">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Create an order from a recipe"/>
+                <String fx:value="Create a custom order"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Label>Create an order from a recipe:</Label>
+    <Label>Recipe name:</Label>
+    <TextField fx:id="recipeNameField"/>
+    <Label>Delivery date:</Label>
+    <TextField fx:id="deliveryDateField"/>
+    <Label>Delivery location:</Label>
+    <TextField fx:id="deliveryLocationField"/>
+    <Button text="Enter"/>
+
+    <Label>Create a custom order:</Label>
+    <Label>Custom name:</Label>
+    <TextField fx:id="customNameField"/>
+    <Label>Batter:</Label>
+    <TextField fx:id="batterField"/>
+    <Label>Frosting:</Label>
+    <TextField fx:id="frostingField"/>
+    <Label>Topping:</Label>
+    <TextField fx:id="toppingField"/>
+    <Label>Delivery date:</Label>
+    <TextField fx:id="deliveryDateFieldForCustom"/>
+    <Label>Delivery location:</Label>
+    <TextField fx:id="deliveryLocationFieldForCustom"/>
+    <CheckBox value="Create new recipe"/>
+    <Button text="Enter"/>
+
+    <Button fx:id="returnBtn" text="Back"/>
+
+
+
+</AnchorPane>
