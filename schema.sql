@@ -12,6 +12,7 @@ create table recipes
 
 create table orders
 (
+    order_id          int           null,
     cake_name         varchar(50)   null,
     creation_date     date          null,
     delivery_date     date          null,
@@ -21,5 +22,3 @@ create table orders
     constraint cake_name__fk
         foreign key (cake_name) references recipes (recipe_name)
 );
-
-
