@@ -1,13 +1,16 @@
 package com.cakeservice.app;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class HelloApplication extends Application {
     @Override
@@ -126,18 +129,24 @@ public class HelloApplication extends Application {
                 orderCustomBox
         );
 
-        VBox root = new VBox(12);
-        root.setPadding(new Insets(16));
-        root.getChildren().addAll(
-                displayBox,
-                cakeSearchBox,
-                orderSearchBox,
-                displayLabel,
-                createOrderBox
-        );
+//        VBox root = new VBox(12);
+//        root.setPadding(new Insets(16));
+//        root.getChildren().addAll(
+//                displayBox,
+//                cakeSearchBox,
+//                orderSearchBox,
+//                displayLabel,
+//                createOrderBox
+//        );
 
+        Parent root = null;
 
-        //Event handlers and logic
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-view.fxml")));
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
 
 
 

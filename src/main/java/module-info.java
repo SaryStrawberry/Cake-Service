@@ -15,4 +15,6 @@ module com.cakeservice {
     opens com.cakeservice.util to javafx.fxml;
     exports com.cakeservice.app;
     opens com.cakeservice.app to javafx.fxml;
+    exports com.cakeservice.app.controllers;
+    opens com.cakeservice.app.controllers to javafx.fxml;
 }
