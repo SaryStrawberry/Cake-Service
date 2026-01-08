@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cakeservice.app.controllers.FindController">
+
+<VBox fx:id="findBox" layoutX="45.0" layoutY="42.0">
+    <Label fx:id="findLabel">What would you like to find?</Label>
+    <ComboBox fx:id="searchOptions" layoutX="45.0" layoutY="41.0" onAction="#selectSearchOption">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Find a cake" />
+                <String fx:value="Find an order" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+</VBox>
+
+    <StackPane layoutX="51.0" layoutY="108.0">
+        <VBox fx:id="findCakeBox" layoutX="57.0" layoutY="114.0">
+            <Label fx:id="findCakeLabel" layoutX="41.0" layoutY="35.0">Find cakes by ---:</Label>
+            <ComboBox fx:id="cakeSearchOptions" layoutX="42.0" layoutY="59.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Name" />
+                        <String fx:value="Batter" />
+                        <String fx:value="Frosting" />
+                        <String fx:value="Topping" />
+                        <String fx:value="Preparation time" />
+                        <String fx:value="Cost" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <TextField fx:id="findCakeField" layoutX="42.0" layoutY="94.0" promptText="Enter a ---" />
+
+            <Button fx:id="cakeSearchBtn" layoutX="41.0" layoutY="125.0" text="Enter" />
+        </VBox>
+
+
+        <VBox fx:id="findOrderBox" layoutX="224.0" layoutY="114.0">
+            <Label fx:id="findOrderLabel" layoutX="45.0" layoutY="200.0">Find orders by ---:</Label>
+            <ComboBox fx:id="orderSearchOptions" layoutX="43.0" layoutY="223.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Order ID" />
+                        <String fx:value="Name" />
+                        <String fx:value="Order Creation Date" />
+                        <String fx:value="Delivery Date" />
+                        <String fx:value="Delivery Location" />
+                        <String fx:value="Cost" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <TextField fx:id="findOrderField" layoutX="45.0" layoutY="258.0" promptText="Enter a ---" />
+
+            <Button fx:id="orderSearchBtn" layoutX="45.0" layoutY="290.0" text="Enter" />
+        </VBox>
+    </StackPane>
+
+
+
+
+
+    <Button fx:id="returnBtn" layoutX="24.0" layoutY="336.0" text="Back" />
+
+</AnchorPane>
