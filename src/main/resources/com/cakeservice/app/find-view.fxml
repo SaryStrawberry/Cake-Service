@@ -66,6 +66,6 @@
 
 
 
-    <Button fx:id="returnBtn" layoutX="24.0" layoutY="336.0" text="Back" />
+    <Button fx:id="returnBtn" layoutX="24.0" layoutY="336.0" onMouseClicked="#backToMainOnClick" text="Back" />
 
 </AnchorPane>

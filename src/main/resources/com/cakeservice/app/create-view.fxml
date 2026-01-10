@@ -1,53 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.text.Text?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.cakeservice.app.controllers.CreateController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cakeservice.app.controllers.CreateController">
 
-    <ComboBox fx:id="createOptions">
-        <items>
-            <FXCollections fx:factory="observableArrayList">
-                <String fx:value="Create an order from a recipe"/>
-                <String fx:value="Create a custom order"/>
-            </FXCollections>
-        </items>
-    </ComboBox>
+    <VBox fx:id="createOptionsBox" layoutX="22.0" layoutY="24.0">
+        <Label>How would you like to create your order?</Label>
+        <ComboBox fx:id="createOptions" onAction="#selectCreateOption">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Create an order from a recipe" />
+                    <String fx:value="Create a custom order" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </VBox>
 
-    <Label>Create an order from a recipe:</Label>
-    <Label>Recipe name:</Label>
-    <TextField fx:id="recipeNameField"/>
-    <Label>Delivery date:</Label>
-    <TextField fx:id="deliveryDateField"/>
-    <Label>Delivery location:</Label>
-    <TextField fx:id="deliveryLocationField"/>
-    <Button text="Enter"/>
 
-    <Label>Create a custom order:</Label>
-    <Label>Custom name:</Label>
-    <TextField fx:id="customNameField"/>
-    <Label>Batter:</Label>
-    <TextField fx:id="batterField"/>
-    <Label>Frosting:</Label>
-    <TextField fx:id="frostingField"/>
-    <Label>Topping:</Label>
-    <TextField fx:id="toppingField"/>
-    <Label>Delivery date:</Label>
-    <TextField fx:id="deliveryDateFieldForCustom"/>
-    <Label>Delivery location:</Label>
-    <TextField fx:id="deliveryLocationFieldForCustom"/>
-    <CheckBox value="Create new recipe"/>
-    <Button text="Enter"/>
+    <StackPane layoutX="22.0" layoutY="89.0">
+        <VBox fx:id="createFromRecipeBox">
+            <Label>Create an order from a recipe:</Label>
+            <Label>Recipe name:</Label>
+            <TextField fx:id="recipeNameField" />
+            <Label>Delivery date:</Label>
+            <TextField fx:id="deliveryDateField" />
+            <Label>Delivery location:</Label>
+            <TextField fx:id="deliveryLocationField" />
+            <Button text="Enter" />
+        </VBox>
+   
+        <GridPane fx:id="createCustomPane" prefHeight="223.0" prefWidth="319.0">
+            <Label>Create a custom order:</Label>
+            <Label GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">Custom name:</Label>
+            <TextField fx:id="customNameField" GridPane.rowIndex="3" />
+            <Label GridPane.rowIndex="4">Batter:</Label>
+            <ComboBox fx:id="batterBox" GridPane.rowIndex="5">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Vanilla"/>
+                        <String fx:value="Chocolate"/>
+                        <String fx:value="Dark chocolate"/>
+                        <String fx:value="Red velvet"/>
+                        <String fx:value="Strawberry"/>
+                        <String fx:value="Lemon"/>
+                        <String fx:value="Coconut"/>
+                        <String fx:value="Cream cheese"/>
+                        <String fx:value="Vanilla ice cream"/>
+                        <String fx:value="Chocolate ice cream"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label GridPane.rowIndex="6">Frosting:</Label>
+            <ComboBox fx:id="frostingBox" GridPane.rowIndex="7">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Pineapple buttercream"/>
+                        <String fx:value="Chocolate buttercream"/>
+                        <String fx:value="Vanilla"/>
+                        <String fx:value="Peanut butter frosting"/>
+                        <String fx:value="Raspberry buttercream"/>
+                        <String fx:value="Mocha buttercream"/>
+                        <String fx:value="Salted caramel frosting"/>
+                        <String fx:value="Marshmallow frosting"/>
+                        <String fx:value="Swiss meringue"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label GridPane.rowIndex="8">Topping:</Label>
+            <ComboBox fx:id="toppingBox" GridPane.rowIndex="9">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Mango jam"/>
+                        <String fx:value="Fudge chunks"/>
+                        <String fx:value="Oreo cookie chunks"/>
+                        <String fx:value="Caramel drizzle"/>
+                        <String fx:value="Chocolate drizzle"/>
+                        <String fx:value="Chopped walnuts"/>
+                        <String fx:value="Fresh strawberries"/>
+                        <String fx:value="Whipped cream"/>
+                        <String fx:value="Rainbow sprinkles"/>
+                        <String fx:value="Maraschino cherries"/>
+                        <String fx:value="Toasted coconut flakes"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Delivery date:" GridPane.columnIndex="1" GridPane.rowIndex="2">Delivery date:</Label>
+            <TextField fx:id="deliveryDateFieldForCustom" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label GridPane.columnIndex="1" GridPane.rowIndex="4">Delivery location:</Label>
+            <TextField fx:id="deliveryLocationFieldForCustom" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <CheckBox text="Create new recipe" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button text="Enter" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+         <columnConstraints>
+            <ColumnConstraints maxWidth="174.0" minWidth="43.0" prefWidth="62.0" />
+            <ColumnConstraints maxWidth="177.0" minWidth="10.0" prefWidth="158.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         </rowConstraints>
+        </GridPane>
+    </StackPane>
 
-    <Button fx:id="returnBtn" text="Back"/>
+    <Button fx:id="returnBtn" layoutX="28.0" layoutY="348.0" onMouseClicked="#backToMainOnClick" text="Back" />
 
 
 

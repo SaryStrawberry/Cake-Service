@@ -16,4 +16,8 @@ public class MainController {
     public void goToFindPageOnClick(MouseEvent mouseEvent) {
         SceneManager.switchScene("find-view.fxml", "Find cake or order");
     }
+
+    public void goToCreatePageOnClick(MouseEvent mouseEvent) {
+        SceneManager.switchScene("create-view.fxml", "Create a new order");
+    }
 }
